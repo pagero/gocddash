@@ -10,7 +10,7 @@ help: ## Show this help
 
 tag-and-push:
 	git tag -a ${VERSION} -m "Releasing ${VERSION}" && \
-	git push origin master ${VERSION} && \
+	git push origin ${VERSION} && \
 	docker tag $(DOCKER_IMAGE_NAME):latest $(DOCKER_IMAGE_NAME):${VERSION} && \
 	docker push $(DOCKER_IMAGE_NAME):${VERSION}
 
